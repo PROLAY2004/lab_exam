@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Week 7</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <h2>1. show the application of the ‘super’ keyword to access a superclass member.</h2>
+<textarea>
+    class Animal {
+        String sound = "Animal makes a sound";
+    }
+    
+    class Dog extends Animal {
+        String sound = "Dog barks";
+    
+        void displaySound() {
+            System.out.println("Dog sound: " + sound);
+            System.out.println("Animal sound: " + super.sound);
+        }
+    
+        public static void main(String[] args) {
+            Dog dog = new Dog();
+            dog.displaySound();
+        }
+    }
+    
+</textarea>
+<h2>2. show the application of the ‘super’ keyword to access a superclass constructor.</h2>
+<textarea>
+    class Animal {
+        Animal() {
+            System.out.println("Animal constructor");
+        }
+    }
+    
+    class Dog extends Animal {
+        Dog() {
+            super();
+            System.out.println("Dog constructor");
+        }
+    
+        public static void main(String[] args) {
+            Dog dog = new Dog();
+        }
+    }
+    
+</textarea>
+<h2>3. Define a class called dimension. Create its two subclasses Rectangle and Triangle. By using the concept of method overriding, find out the area of Rectangle and Triangle.</h2>
+<textarea>
+    class Dimension {
+        double area() {
+            return 0;
+        }
+    }
+    
+    class Rectangle extends Dimension {
+        double length, width;
+    
+        Rectangle(double length, double width) {
+            this.length = length;
+            this.width = width;
+        }
+    
+        @Override
+        double area() {
+            return length * width;
+        }
+    }
+    
+    class Triangle extends Dimension {
+        double base, height;
+    
+        Triangle(double base, double height) {
+            this.base = base;
+            this.height = height;
+        }
+    
+        @Override
+        double area() {
+            return 0.5 * base * height;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Rectangle rect = new Rectangle(5, 3);
+            System.out.println("Area of Rectangle: " + rect.area());
+    
+            Triangle tri = new Triangle(4, 6);
+            System.out.println("Area of Triangle: " + tri.area());
+        }
+    }
+    
+</textarea>
+</body>
+</html>

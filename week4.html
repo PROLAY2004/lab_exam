@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>NWeek 4</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <h2>1. Design a class Volume and then find out the volume of a Cube, Cylinder and Sphere using method overloading.</h2>
+<textarea>
+	class Volume {
+		double calculate(double side) {
+			return side * side * side;
+		}
+		double calculate(double radius, double height) {
+			return Math.PI * radius * radius * height;
+		}
+		double calculate(double radius, boolean isSphere) {
+			return (4.0 / 3.0) * Math.PI * radius * radius * radius;
+		}
+	
+		public static void main(String[] args) {
+			Volume v = new Volume();
+			double cubeVolume = v.calculate(5);
+			double cylinderVolume = v.calculate(7, 10);
+			double sphereVolume = v.calculate(6, true);
+			System.out.println("Volume of Cube: " + cubeVolume);
+			System.out.println("Volume of Cylinder: " + cylinderVolume);
+			System.out.println("Volume of Sphere: " + sphereVolume);
+		}
+	}
+	
+</textarea>
+<h2>2. Implement the above program using constructor overloading.</h2>
+<textarea>
+	class Volume {
+		double volume;
+	
+		Volume(double side) {
+			volume = side * side * side;
+		}
+	
+		Volume(double radius, double height) {
+			volume = Math.PI * radius * radius * height;
+		}
+	
+		Volume(double radius, boolean isSphere) {
+			volume = (4.0 / 3.0) * Math.PI * radius * radius * radius;
+		}
+	
+		void display() {
+			System.out.println("Volume: " + volume);
+		}
+	
+		public static void main(String[] args) {
+			Volume cube = new Volume(5);
+			cube.display();
+			Volume cylinder = new Volume(7, 10);
+			cylinder.display();
+			Volume sphere = new Volume(6, true);
+			sphere.display();
+		}
+	}
+	
+</textarea>
+<h2>3. Implement i) call by value and ii) call by reference.</h2>
+<textarea>
+	class CallByValue {
+		void modifyValue(int x) {
+			x = x + 10;
+		}
+	}
+	
+	class CallByReference {
+		int value;
+		CallByReference(int value) {
+			this.value = value;
+		}
+		void modifyReference(CallByReference obj) {
+			obj.value = obj.value + 10;
+		}
+	}
+	
+	public class CallExample {
+		public static void main(String[] args) {
+			CallByValue cbv = new CallByValue();
+			int a = 5;
+			cbv.modifyValue(a);
+			System.out.println("After Call by Value: " + a);
+	
+			CallByReference cbr = new CallByReference(5);
+			cbr.modifyReference(cbr);
+			System.out.println("After Call by Reference: " + cbr.value);
+		}
+	}
+	
+</textarea>
+<h2>4. show the application of recursion.</h2>
+<textarea>
+	class RecursionExample {
+		static int factorial(int n) {
+			return n == 1 ? 1 : n * factorial(n - 1);
+		}
+	
+		public static void main(String[] args) {
+			System.out.println(factorial(5));
+		}
+	}
+	
+</textarea>
+</body>
+</html>

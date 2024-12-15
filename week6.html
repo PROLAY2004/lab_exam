@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Week 6</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <h2>1. show the application of simple inheritance.</h2>
+<textarea>
+    class Animal {
+        void sound() {
+            System.out.println("Animal makes a sound");
+        }
+    }
+    
+    class Dog extends Animal {
+        void sound() {
+            System.out.println("Dog barks");
+        }
+    
+        public static void main(String[] args) {
+            Dog dog = new Dog();
+            dog.sound();
+        }
+    }
+    
+</textarea>
+</body>
+</html>

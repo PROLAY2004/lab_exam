@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Week 3</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <h2>1. Implement default constructor.</h2>
+<textarea>
+   class Myclass{
+     public Myclass(){
+        System.out.println("Inside default constructor");
+     }
+   }
+   public class Main{
+    public static void main(String[] args){
+        Myclass mc=new Myclass();
+    }
+   }
+</textarea>
+    <h2>2. Compute the perimeter of Circle, Rectangle, Square using parameterized constructor using command line argument.</h2>
+    <textarea>
+        class Circle {
+            double radius;
+            Circle(double radius) {
+                this.radius = radius;
+            }
+            double perimeter() {
+                return 2 * Math.PI * radius;
+            }
+        }
+        
+        class Rectangle {
+            double length, width;
+            Rectangle(double length, double width) {
+                this.length = length;
+                this.width = width;
+            }
+            double perimeter() {
+                return 2 * (length + width);
+            }
+        }
+        
+        class Square {
+            double side;
+            Square(double side) {
+                this.side = side;
+            }
+            double perimeter() {
+                return 4 * side;
+            }
+        }
+        
+        public class PerimeterCalculator {
+            public static void main(String[] args) {
+                double radius = Double.parseDouble(args[0]);
+                double length = Double.parseDouble(args[1]);
+                double width = Double.parseDouble(args[2]);
+                double side = Double.parseDouble(args[3]);
+        
+                Circle circle = new Circle(radius);
+                Rectangle rectangle = new Rectangle(length, width);
+                Square square = new Square(side);
+        
+                System.out.println("Perimeter of Circle: " + circle.perimeter());
+                System.out.println("Perimeter of Rectangle: " + rectangle.perimeter());
+                System.out.println("Perimeter of Square: " + square.perimeter());
+            }
+        }
+
+        
+
+        Bash/terminal : for this code execution write
+        after the $ java PerimeterCalculator 7 10 5 4
+
+    </textarea>
+    <h2>3. Implement ‘this’ keyword.</h2>
+    <textarea>
+        class MyClass {
+            int value;
+            MyClass(int value) {
+                this.value = value;
+            }
+            void display() {
+                System.out.println("Value: " + this.value);
+            }
+        
+            public static void main(String[] args) {
+                MyClass obj = new MyClass(10);
+                obj.display();
+            }
+        }
+        
+    </textarea>
+</body>
+</html>

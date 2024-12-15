@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Week1</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <h2>1. print "Hello, GNIT"</h2>
+	<textarea>
+	public class Hello{
+		public static void main(String[] args){
+			System.out.println("Hello, GNIT");
+		}
+	}
+	</textarea>
+	<h2>2. Check whether a number is even or odd</h2>
+	<textarea>
+		import java.util.*;
+		public class EvenOdd{
+			public static void main(String[] args){
+				Scanner sc=new Scanner(System.in);
+				System.out.println("Enter a number to check fo even or odd:");
+				int n = sc.nextInt();
+				if(n%2==0){
+					System.out.println("Even");
+				}else{
+					System.out.println("Odd");
+				}
+			}
+		}
+	</textarea>
+	<h2>3.Find out the roots of a quadratic equation</h2>
+	<textarea>
+		import java.util.Scanner;
+
+public class QuadraticEquation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the coefficients of the quadratic equation (ax^2 + bx + c):");
+        System.out.print("a: ");
+        double a = scanner.nextDouble();
+        System.out.print("b: ");
+        double b = scanner.nextDouble();
+        System.out.print("c: ");
+        double c = scanner.nextDouble();
+
+        if (a == 0) {
+            System.out.println("This is not a quadratic equation.");
+        } else {
+            double discriminant = b * b - 4 * a * c;
+
+            if (discriminant > 0) {
+                double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                System.out.println("The equation has two distinct real roots: ");
+                System.out.println("Root 1: " + root1);
+                System.out.println("Root 2: " + root2);
+            } else if (discriminant == 0) {
+                double root = -b / (2 * a);
+                System.out.println("The equation has one real root (repeated): ");
+                System.out.println("Root: " + root);
+            } else {
+                double realPart = -b / (2 * a);
+                double imaginaryPart = Math.sqrt(-discriminant) / (2 * a);
+                System.out.println("The equation has complex roots: ");
+                System.out.println("Root 1: " + realPart + " + " + imaginaryPart + "i");
+                System.out.println("Root 2: " + realPart + " - " + imaginaryPart + "i");
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+	</textarea>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Week 8</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <h2>1. show the application of run-time polymorphism.</h2>
+<textarea>
+    class Animal {
+        void sound() {
+            System.out.println("Animal makes a sound");
+        }
+    }
+    
+    class Dog extends Animal {
+        @Override
+        void sound() {
+            System.out.println("Dog barks");
+        }
+    }
+    
+    class Cat extends Animal {
+        @Override
+        void sound() {
+            System.out.println("Cat meows");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Animal animal = new Dog();
+            animal.sound();
+    
+            animal = new Cat();
+            animal.sound();
+        }
+    }
+    
+</textarea>
+<h2>2. show the use of abstract class & method.</h2>
+<textarea>
+    abstract class Animal {
+        abstract void sound();
+    }
+    
+    class Dog extends Animal {
+        @Override
+        void sound() {
+            System.out.println("Dog barks");
+        }
+    }
+    
+    class Cat extends Animal {
+        @Override
+        void sound() {
+            System.out.println("Cat meows");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Animal dog = new Dog();
+            dog.sound();
+    
+            Animal cat = new Cat();
+            cat.sound();
+        }
+    }
+    
+</textarea>
+</body>
+</html>

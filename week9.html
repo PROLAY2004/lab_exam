@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Week 9</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <h2>1. Define an interface called Area. Create two classes Rectangle and Circle that implement the interface. Find out the area of Rectangle and Triangle.</h2>
+<textarea>
+    interface Area {
+        double calculateArea();
+    }
+    
+    class Rectangle implements Area {
+        double length, width;
+    
+        Rectangle(double length, double width) {
+            this.length = length;
+            this.width = width;
+        }
+    
+        @Override
+        public double calculateArea() {
+            return length * width;
+        }
+    }
+    
+    class Circle implements Area {
+        double radius;
+    
+        Circle(double radius) {
+            this.radius = radius;
+        }
+    
+        @Override
+        public double calculateArea() {
+            return Math.PI * radius * radius;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Area rect = new Rectangle(5, 3);
+            System.out.println("Area of Rectangle: " + rect.calculateArea());
+    
+            Area circle = new Circle(4);
+            System.out.println("Area of Circle: " + circle.calculateArea());
+        }
+    }
+    
+</textarea>
+<h2>2. show the implementation of Multiple Inheritance.</h2>
+<textarea>
+    interface Animal {
+        void sound();
+    }
+    
+    interface Mammal {
+        void eat();
+    }
+    
+    class Dog implements Animal, Mammal {
+        @Override
+        public void sound() {
+            System.out.println("Dog barks");
+        }
+    
+        @Override
+        public void eat() {
+            System.out.println("Dog eats");
+        }
+    
+        public static void main(String[] args) {
+            Dog dog = new Dog();
+            dog.sound();
+            dog.eat();
+        }
+    }
+    
+</textarea>
+</body>
+</html>
