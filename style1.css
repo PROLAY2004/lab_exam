@@ -16,3 +16,9 @@ textarea{
     height:90vh;
     margin: auto;
 }
+button{
+    height: 30px;
+    width: 100px;
+    background-color: blue;
+    color: white;
+}
